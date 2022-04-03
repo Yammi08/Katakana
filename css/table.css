@@ -1,0 +1,28 @@
+.container-katakana{
+    display: inline;
+}
+.item-katakanaSymbol{
+    margin: 0;
+}
+.th-item-katakana:hover{
+    width: 76px;
+    height: 100px;
+    font-size: 25px;
+}
+
+.th-item-katakana{
+    color: gray;
+    background-color: cornsilk;
+    border: 2px solid gray;
+    transition: width 0.3s , height 0.3s, font-size 0.3s;
+    width: 50px;
+    height: 50px;
+
+}
+
+.tr-item-katakana{
+    color: gray;
+    background-color: cornsilk;
+    border: 2px solid gray;
+    
+}
