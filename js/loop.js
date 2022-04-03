@@ -64,16 +64,33 @@ const katakana =
 }
 const container = document.querySelector(".container-katakana");
 
+function FindKataka(id){
+    
+    for(let symbol in katakana)
+    {
+        let kataico = container.querySelector(`#th-item-katakana-${symbol}`);
+        kataico.setAttribute('katakanaup','false');
+    }
+    if(katakana.hasOwnProperty(id))
+    {
+        let kataico = container.querySelector(`#th-item-katakana-${id}`);
+        kataico.setAttribute('katakanaup','true');
+    }
+}
+
 function createKatakana(nm,sym){
-    console.debug(nm);
-    Katakananame = `<h3 class = "${nm}-item-katakanaSymbol item-katakanaSymbol">${nm}</h3>`;
-    Katakanasymbol = `<h1 class = "${nm}-item-katakanaSymbol item-katakanaSymbol">${sym}</h1>`;
+    Katakananame = `<h3 class = "${nm}-item-katakanaSymbol item-katakanaSymbol" id = "${nm}">${nm}</h3>`;
+    Katakanasymbol = `<h1 class = "${nm}-item-katakanaSymbol item-katakanaSymbol" id = "${sym}">${sym}</h1>`;
     return [Katakananame,Katakanasymbol];
 }
 
 let docFrag = document.createDocumentFragment();
 let tabindex = 0;
 let katakanaTR;
+
+
+//update
+
 for(let symbol in katakana){
     let cKatakana;
     if(tabindex % 10 == 0)
@@ -89,12 +106,18 @@ for(let symbol in katakana){
     
     
     let katakanaTH = document.createElement("TH");
+
     katakanaTH.tabIndex = tabindex;
-    katakanaTH.classList.add(`th-item-katakana-${symbol}`, `th-item-katakana`)
+    katakanaTH.classList.add(`th-item-katakana`)
+    katakanaTH.id = `th-item-katakana-${symbol}`;
+
+    katakanaTH.setAttribute('katakanaup',false);
+    
     cKatakana = createKatakana(symbol,katakana[symbol])
     katakanaTH.innerHTML = cKatakana[0] + cKatakana[1];
     katakanaTR.append(katakanaTH);
 }
+
 docFrag.append(katakanaTR)
 katakanaTR = document.createElement("TR");
 katakanaTR.classList.add(`tr-item-katakana`);

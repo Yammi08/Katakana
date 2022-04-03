@@ -1,8 +1,15 @@
 .container-katakana{
-    display: inline;
+    margin-left: auto;
+    margin-right: auto;
 }
+
 .item-katakanaSymbol{
     margin: 0;
+}
+.th-item-katakana[katakanaup = true]{
+    width: 76px;
+    height: 100px;
+    font-size: 25px;
 }
 .th-item-katakana:hover{
     width: 76px;
@@ -10,19 +17,42 @@
     font-size: 25px;
 }
 
+.div-katakana{
+    color: gray;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+.input-findText::placeholder{
+    color: rgb(177, 177, 177);
+}
+.input-findText{
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+    
+    height: 30px;
+    width: 300px;
+
+    border-width: 5px;
+    border-style:double;
+    border-color: cornsilk;
+
+    color: gray;
+
+    text-align: center;
+    font-size: 25px;
+}
+
 .th-item-katakana{
     color: gray;
     background-color: cornsilk;
+
     border: 2px solid gray;
-    transition: width 0.3s , height 0.3s, font-size 0.3s;
+
     width: 50px;
     height: 50px;
 
-}
-
-.tr-item-katakana{
-    color: gray;
-    background-color: cornsilk;
-    border: 2px solid gray;
-    
+    transition: width 0.3s , height 0.3s, font-size 0.3s;
 }
